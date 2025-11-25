@@ -8,6 +8,7 @@ import Plans from './pages/Plans';
 import Amenities from './pages/Amenities';
 import Staff from './pages/Staff';
 import Contact from './pages/Contact';
+import Pickleball from './pages/Pickleball';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -31,6 +32,7 @@ const App: React.FC = () => {
             <Route path="/amenities" element={<Amenities />} />
             <Route path="/staff" element={<Staff />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/pickleball" element={<Pickleball />} />
             {/* Catch-all for demo purposes, redirects to home */}
             <Route path="*" element={<Home />} />
           </Routes>

@@ -14,7 +14,7 @@ const navItems: NavItem[] = [
   { label: 'Memberships', path: '/plans-and-rates' },
   { label: 'Amenities', path: '/amenities' },
   { label: 'CrossFit', path: 'https://crossfitorrville.com/', isExternal: true },
-  { label: 'Pickleball', path: '/plans-and-rates' }, // Linking to plans where pricing is
+  { label: 'Pickleball', path: '/pickleball' },
   { label: 'Staff', path: '/staff' },
   { label: 'Contact', path: '/contact' },
 ];

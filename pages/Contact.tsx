@@ -125,11 +125,13 @@ const Contact: React.FC = () => {
               
               <div className="bg-brand-gray p-8 border-l-2 border-white/20 hover:border-brand-red transition-colors group">
                 <Clock className="text-brand-red mb-4 h-8 w-8" />
-                <h4 className="font-display text-xl font-bold uppercase text-white mb-2">Hours</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  <span className="text-white font-medium">24/7 Access</span><br/>
-                  For Members
-                </p>
+                <h4 className="font-display text-xl font-bold uppercase text-white mb-2">Staffed Hours</h4>
+                <div className="text-gray-400 text-xs leading-relaxed space-y-1">
+                  <p className="flex justify-between"><span className="text-white">Mon-Fri:</span> 7 AM - 7 PM</p>
+                  <p className="flex justify-between"><span className="text-white">Saturday:</span> 7 AM - 1 PM</p>
+                  <p className="flex justify-between"><span className="text-white">Sunday:</span> 12:30 PM - 4:30 PM</p>
+                  <p className="text-brand-red pt-2 font-bold uppercase">24/7 Member Access</p>
+                </div>
               </div>
             </div>
 
@@ -156,7 +158,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-gray-500">Call Us</p>
-                    <p className="text-white font-bold font-display text-xl">(330) 683-4567</p>
+                    <p className="text-white font-bold font-display text-xl">(866) 414-5438</p>
                   </div>
                </div>
                <div className="flex-1 bg-brand-dark p-6 border border-white/5 flex items-center gap-4">

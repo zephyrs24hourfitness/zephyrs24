@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Facebook, Instagram, MapPin, Mail, Phone } from 'lucide-react';
 
@@ -36,7 +37,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone className="text-brand-red shrink-0 group-hover:text-white transition-colors" size={20} />
-                <span>(330) 683-4567</span>
+                <span>(866) 414-5438</span>
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail className="text-brand-red shrink-0 group-hover:text-white transition-colors" size={20} />
@@ -46,19 +47,19 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="font-display text-lg font-bold mb-6 text-white uppercase tracking-widest border-l-4 border-brand-red pl-3">Hours</h3>
+            <h3 className="font-display text-lg font-bold mb-6 text-white uppercase tracking-widest border-l-4 border-brand-red pl-3">Staffed Hours</h3>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li className="flex justify-between border-b border-white/5 pb-2">
                 <span>Mon - Fri</span>
-                <span className="text-white font-medium">5:00 AM - 9:00 PM</span>
+                <span className="text-white font-medium">7:00 AM - 7:00 PM</span>
               </li>
               <li className="flex justify-between border-b border-white/5 pb-2">
                 <span>Saturday</span>
-                <span className="text-white font-medium">7:00 AM - 4:00 PM</span>
+                <span className="text-white font-medium">7:00 AM - 1:00 PM</span>
               </li>
               <li className="flex justify-between border-b border-white/5 pb-2">
                 <span>Sunday</span>
-                <span className="text-white font-medium">8:00 AM - 2:00 PM</span>
+                <span className="text-white font-medium">12:30 PM - 4:30 PM</span>
               </li>
               <li className="mt-4 text-brand-red font-bold uppercase text-xs tracking-wider">
                 24/7 Access for Members
