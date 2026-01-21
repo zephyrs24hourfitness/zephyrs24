@@ -321,7 +321,7 @@ const Plans: React.FC = () => {
                     <div className="relative z-10">
                       <div className="flex justify-between items-end mb-2">
                           <span className="text-xl font-bold text-white uppercase tracking-wide">Court Rental</span>
-                          <span className="text-5xl font-display font-bold text-brand-red">$24.00</span>
+                          <span className="text-5xl font-display font-bold text-brand-red">$25.56</span>
                       </div>
                       <p className="text-gray-400 text-sm mb-1">Per hour • Non-member rate</p>
                       <p className="text-gray-500 text-xs">Split the cost with up to 3 friends</p>
