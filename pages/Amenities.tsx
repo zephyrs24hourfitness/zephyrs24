@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Dumbbell, HeartPulse, Zap, Trophy, ShowerHead, Wifi } from 'lucide-react';
+import { Dumbbell, HeartPulse, Zap, Trophy, ShowerHead, Wifi, CupSoda, Clock } from 'lucide-react';
 
 const images = [
   "https://images.squarespace-cdn.com/content/v1/637259c1a02be518e8a5e14c/76d2f848-6433-4b39-9724-d3a28b6d93b0/1A1A2233.jpg?format=1500w",
@@ -41,9 +41,14 @@ const features = [
     icon: <ShowerHead className="w-8 h-8 text-brand-red" />
   },
   {
-    title: "Modern Conveniences",
-    description: "Clean locker rooms, showers, free WiFi, and a pro shop for all your gear needs.",
-    icon: <Wifi className="w-8 h-8 text-brand-red" />
+    title: "Power Bar",
+    description: "Protein smoothies, recovery drinks, and supplements available at our in-house Power Bar.",
+    icon: <CupSoda className="w-8 h-8 text-brand-red" />
+  },
+  {
+    title: "24/7 + Essentials",
+    description: "24-hour access, clean locker rooms and showers, plus free Wi-Fi for members.",
+    icon: <Clock className="w-8 h-8 text-brand-red" />
   }
 ];
 

@@ -461,7 +461,7 @@ const params = {
                     Email Us
                   </p>
                   <p className="text-white font-bold font-display text-xl">
-                    info@zephyrs24.com
+                    frontdesk@zephyrs24.com
                   </p>
                 </div>
               </div>

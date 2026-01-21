@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail className="text-brand-red shrink-0 group-hover:text-white transition-colors" size={20} />
-                <span>info@zephyrs24.com</span>
+                <span>frontdesk@zephyrs24.com</span>
               </li>
             </ul>
           </div>

@@ -51,7 +51,7 @@ Message:
 - Verify that form resets on success and shows confirmation message
 
 ## 6. Customize the Recipient Email
-- The form currently sends to `info@zephyrs24.com`
+- The form currently sends to `frontdesk@zephyrs24.com`
 - You can change this in [pages/Contact.tsx](pages/Contact.tsx#L39) to any email address
 
 ## Troubleshooting
