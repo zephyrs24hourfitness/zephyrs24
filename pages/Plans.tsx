@@ -37,7 +37,7 @@ const plans: PricingPlan[] = [
     description: 'Standard 24/7 gym access for the independent fitness enthusiast.',
     features: [
       { text: '24/7 access to Zephyrs Fitness', included: true },
-      { text: 'Discounted Pickleball ($12.50/hr)', included: true },
+      { text: 'Discounted Pickleball ($13.31/hr)', included: true },
       { text: 'Unlimited CrossFit Open Gym', included: false },
       { text: 'Coach-led CrossFit classes', included: false },
       { text: 'Recovery Room access', included: false },
@@ -63,7 +63,7 @@ const plans: PricingPlan[] = [
       { text: 'Unlimited CrossFit Open Gym', included: true },
       { text: '24/7 access to Zephyrs Fitness', included: true },
       { text: 'Unlimited Recovery Room access', included: true },
-      { text: 'Discounted Pickleball ($12.50/hr)', included: true },
+      { text: 'Discounted Pickleball ($13.31/hr)', included: true },
     ],
     isPopular: false
   },
@@ -86,7 +86,7 @@ const plans: PricingPlan[] = [
       { text: 'Unlimited CrossFit Open Gym', included: true },
       { text: '24/7 access to Zephyrs Fitness', included: true },
       { text: 'Unlimited Recovery Room access', included: true },
-      { text: 'Discounted Pickleball ($12.50/hr)', included: true },
+      { text: 'Discounted Pickleball ($13.31/hr)', included: true },
     ],
     isPopular: true
   },
@@ -101,7 +101,7 @@ const plans: PricingPlan[] = [
     description: 'Building healthy habits early. 24/7 access for ages 18 & under.',
     features: [
       { text: '24/7 access to Zephyrs Fitness', included: true },
-      { text: 'Discounted Pickleball ($12.50/hr)', included: true },
+      { text: 'Discounted Pickleball ($13.31/hr)', included: true },
       { text: 'Unlimited CrossFit Open Gym', included: false },
       { text: 'Coach-led CrossFit classes', included: false },
       { text: 'Recovery Room access', included: false },
@@ -329,7 +329,7 @@ const Plans: React.FC = () => {
                 </div>
                  <div className="bg-brand-red/10 p-6 border border-brand-red/20 mb-8 rounded-sm">
                     <p className="text-brand-red text-sm font-bold uppercase tracking-wider mb-1">Member Benefit</p>
-                    <p className="text-gray-300 text-sm">Members pay only <span className="text-white font-bold">$12.50</span> per hour.</p>
+                    <p className="text-gray-300 text-sm">Members pay only <span className="text-white font-bold">$13.31</span> per hour. Non-members: $25.56/hr</p>
                  </div>
 
                 <div className="text-center md:text-left">
