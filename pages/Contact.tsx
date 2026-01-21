@@ -1,9 +1,66 @@
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Initialize EmailJS (get your public key from emailjs.com)
+  React.useEffect(() => {
+    emailjs.init("xZpAeRuJSgUzzfCWm");
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      await emailjs.send(
+        "service_c13hr7r", // Replace with your EmailJS service ID
+        "template_a1geind", // Replace with your EmailJS template ID
+        {
+          to_email: "frontdesk@zephyrs24.com",
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          reply_to: formData.email
+        }
+      );
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      setError('Failed to send message. Please try again later.');
+      console.error('Email error:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="bg-brand-black min-h-screen">
       
@@ -52,13 +109,36 @@ const Contact: React.FC = () => {
             <div className="absolute top-0 right-0 w-32 h-1 bg-brand-red"></div>
             <h3 className="font-display text-3xl font-bold uppercase text-white mb-8">Send a Message</h3>
             
-            <form className="space-y-6">
+            {submitted && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-sm text-green-400 font-bold uppercase text-sm"
+              >
+                ✓ Message sent successfully! We'll be in touch soon.
+              </motion.div>
+            )}
+
+            {error && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-brand-red/20 border border-brand-red/50 rounded-sm text-brand-red font-bold uppercase text-sm"
+              >
+                ✗ {error}
+              </motion.div>
+            )}
+            
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-gray-500">Name *</label>
                   <input 
                     type="text" 
                     id="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-brand-black border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-red transition-colors rounded-sm placeholder-gray-700"
                     placeholder="ENTER NAME"
                   />
@@ -68,6 +148,9 @@ const Contact: React.FC = () => {
                   <input 
                     type="email" 
                     id="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-brand-black border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-red transition-colors rounded-sm placeholder-gray-700"
                     placeholder="ENTER EMAIL"
                   />
@@ -79,6 +162,9 @@ const Contact: React.FC = () => {
                 <input 
                   type="text" 
                   id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-brand-black border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-red transition-colors rounded-sm placeholder-gray-700"
                   placeholder="HOW CAN WE HELP?"
                 />
@@ -88,6 +174,9 @@ const Contact: React.FC = () => {
                 <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-gray-500">Message *</label>
                 <textarea 
                   id="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   rows={6}
                   className="w-full bg-brand-black border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-red transition-colors rounded-sm placeholder-gray-700 resize-none"
                   placeholder="TELL US ABOUT YOUR GOALS..."
@@ -96,10 +185,11 @@ const Contact: React.FC = () => {
 
               <button 
                 type="submit"
-                className="w-full bg-white text-brand-black font-bold uppercase tracking-[0.2em] py-4 hover:bg-brand-red hover:text-white transition-all duration-300 group skew-x-[-3deg]"
+                disabled={loading}
+                className="w-full bg-white text-brand-black font-bold uppercase tracking-[0.2em] py-4 hover:bg-brand-red hover:text-white transition-all duration-300 group skew-x-[-3deg] disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span className="block skew-x-[3deg] flex items-center justify-center gap-2">
-                  Submit Inquiry <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                  {loading ? 'Sending...' : 'Submit Inquiry'} <Send size={18} className={`${!loading ? 'group-hover:translate-x-1' : ''} transition-transform`} />
                 </span>
               </button>
             </form>
