@@ -47,7 +47,7 @@ const features = [
   },
   {
     title: "24/7 + Essentials",
-    description: "24-hour access, clean locker rooms and showers, plus free Wi-Fi for members.",
+    description: "24-hour access, clean lockers and showers, plus free Wi-Fi for members.",
     icon: <Clock className="w-8 h-8 text-brand-red" />
   }
 ];
