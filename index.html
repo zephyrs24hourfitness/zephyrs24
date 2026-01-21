@@ -9,13 +9,11 @@
       type="image/x-icon"
       href="https://images.squarespace-cdn.com/content/v1/637259c1a02be518e8a5e14c/037b163b-fd89-4d3d-aaaa-e77541b6ef94/favicon.ico"
     />
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Inter:wght@300;400;600;800&display=swap"
       rel="stylesheet"
     />
-
     <script>
       tailwind.config = {
         theme: {
@@ -43,7 +41,6 @@
         },
       };
     </script>
-
     <style>
       body {
         background-color: #0a0a0a;
@@ -68,7 +65,7 @@
   <body>
     <div id="root"></div>
 
-    <!-- Vite entrypoint (this mounts your React app) -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- Vite entry (Vite rewrites this to bundled /assets/*.js in production build) -->
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
