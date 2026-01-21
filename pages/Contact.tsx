@@ -79,15 +79,18 @@ const Contact: React.FC = () => {
 
     // IMPORTANT: These keys MUST match your EmailJS template placeholders:
     // {{name}}, {{email}}, {{title}}, {{time}}, {{message}}
-    const params = {
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      title: formData.subject.trim(),
-      message: formData.message.trim(),
-      time: new Date().toLocaleString(),
-      reply_to: formData.email.trim(),
-      to_email: "frontdesk@zephyrs24.com",
-    };
+const params = {
+  name: formData.name.trim(),
+  email: formData.email.trim(),
+  title: formData.subject.trim(),
+  message: formData.message.trim(),
+  time: new Date().toLocaleString(),
+  reply_to: formData.email.trim(),
+
+  to_email: "frontdesk@zephyrs24.com",
+  bcc_email: "zephyrs24hourfitness@gmail.com",
+};
+
 
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, params);
