@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X, Trophy, ArrowRight, Calendar } from 'lucide-react';
+import { Check, X, Trophy, ArrowRight } from 'lucide-react';
 
 type BillingCycle = 'monthly' | 'quarterly' | 'yearly';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Dumbbell, HeartPulse, Zap, Trophy, ShowerHead, Wifi, CupSoda, Clock } from 'lucide-react';
+import { Dumbbell, HeartPulse, Zap, Trophy, ShowerHead, CupSoda, Clock } from 'lucide-react';
 
 const images = [
   "https://images.squarespace-cdn.com/content/v1/637259c1a02be518e8a5e14c/76d2f848-6433-4b39-9724-d3a28b6d93b0/1A1A2233.jpg?format=1500w",
