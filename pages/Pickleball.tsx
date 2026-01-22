@@ -51,7 +51,7 @@ const Pickleball: React.FC = () => {
     <div className="bg-brand-black min-h-screen">
       
       {/* Hero Section */}
-      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden">
+      <div className="relative pt-16 md:pt-32 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden">
          {/* Background Image */}
         <div className="absolute inset-0">
            <img 
@@ -66,7 +66,7 @@ const Pickleball: React.FC = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-5xl md:text-7xl font-bold uppercase text-white mb-6"
+            className="font-display text-3xl sm:text-5xl md:text-7xl font-bold uppercase text-white mb-4 md:mb-6"
           >
             Welcome to <span className="text-brand-red">Pickleball Orrville!</span>
           </motion.h1>
@@ -74,7 +74,7 @@ const Pickleball: React.FC = () => {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.1 }}
-             className="text-xl md:text-2xl text-gray-300 font-light uppercase tracking-widest mb-12"
+             className="text-base md:text-lg lg:text-2xl text-gray-300 font-light uppercase tracking-widest mb-8 md:mb-12"
           >
              Get in the Game! Reserve Your Pickleball Court Today!
           </motion.h3>
@@ -83,15 +83,15 @@ const Pickleball: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col md:flex-row gap-6 justify-center"
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 lg:gap-6 justify-center flex-wrap"
           >
-             <a href="https://zfitness.gymmasteronline.com/portal/membership/f36a08847d28389a7762854be8693e05" target="_blank" rel="noreferrer" className="inline-block bg-brand-red text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-red-700 transition-all duration-300 skew-x-[-10deg] shadow-lg hover:shadow-red-900/30">
+             <a href="https://zfitness.gymmasteronline.com/portal/membership/f36a08847d28389a7762854be8693e05" target="_blank" rel="noreferrer" className="inline-block bg-brand-red text-white px-6 md:px-10 py-3 md:py-4 font-bold uppercase tracking-widest text-sm md:text-base hover:bg-red-700 transition-all duration-300 skew-x-[-10deg] shadow-lg hover:shadow-red-900/30 min-h-[48px] flex items-center">
                 <span className="block skew-x-[10deg]">Signup Now</span>
             </a>
-             <a href="https://zfitness.gymmasteronline.com/portal/membership/ff1772865c9cb0ec804a6bae01b02d00" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-10 py-4 font-bold uppercase tracking-widest hover:bg-gray-200 transition-all duration-300 skew-x-[-10deg]">
+             <a href="https://zfitness.gymmasteronline.com/portal/membership/ff1772865c9cb0ec804a6bae01b02d00" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-6 md:px-10 py-3 md:py-4 font-bold uppercase tracking-widest text-sm md:text-base hover:bg-gray-200 transition-all duration-300 skew-x-[-10deg] min-h-[48px] flex items-center">
                 <span className="block skew-x-[10deg]">Sign Guest Waiver</span>
             </a>
-            <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block border-2 border-white/20 text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-brand-black transition-all duration-300 skew-x-[-10deg]">
+            <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block border-2 border-white/20 text-white px-6 md:px-10 py-3 md:py-4 font-bold uppercase tracking-widest text-sm md:text-base hover:bg-white hover:text-brand-black transition-all duration-300 skew-x-[-10deg] min-h-[48px] flex items-center">
                 <span className="block skew-x-[10deg]">Member Login</span>
             </a>
           </motion.div>
@@ -99,15 +99,15 @@ const Pickleball: React.FC = () => {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
             
             {/* Left Col - Info & Schedule */}
-            <div className="lg:col-span-2 space-y-12">
+            <div className="lg:col-span-2 space-y-8 md:space-y-12">
                 {/* FAQ */}
-                <div id="faq" className="bg-brand-dark border border-white/5 p-8 rounded-sm">
-                    <h3 className="font-display text-3xl font-bold uppercase text-white mb-8 flex items-center gap-3">
-                       <Trophy className="text-brand-red" /> FAQ
+                <div id="faq" className="bg-brand-dark border border-white/5 p-6 md:p-8 rounded-sm">
+                    <h3 className="font-display text-2xl md:text-3xl font-bold uppercase text-white mb-6 md:mb-8 flex items-center gap-3">
+                       <Trophy className="text-brand-red w-6 md:w-8 h-6 md:h-8" /> FAQ
                     </h3>
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
