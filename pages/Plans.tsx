@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X, Trophy, ArrowRight } from 'lucide-react';
+import { Check, X, Trophy, ArrowRight, Calendar } from 'lucide-react';
 
 type BillingCycle = 'monthly' | 'quarterly' | 'yearly';
 
@@ -114,14 +114,14 @@ const Plans: React.FC = () => {
   const [billing, setBilling] = useState<BillingCycle>('monthly');
 
   return (
-    <div className="bg-brand-black min-h-screen pt-16 md:pt-24 pb-12 md:pb-20">
+    <div className="bg-brand-black min-h-screen pt-24 pb-20">
       
       {/* Header */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 md:mb-16 pt-6 md:pt-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 pt-10">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-display text-3xl sm:text-5xl md:text-7xl font-bold uppercase text-white mb-3 md:mb-4"
+          className="font-display text-5xl md:text-7xl font-bold uppercase text-white mb-4"
         >
           Plans & <span className="text-brand-red">Rates</span>
         </motion.h1>
@@ -129,29 +129,29 @@ const Plans: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-sm md:text-lg lg:text-2xl text-gray-300 font-display uppercase tracking-widest mb-6 md:mb-8"
+          className="text-xl md:text-2xl text-gray-300 font-display uppercase tracking-widest mb-8"
         >
           Choose the plan that fits your goals
         </motion.h2>
 
         {/* Billing Toggle */}
-        <div className="flex justify-center mb-8 md:mb-10">
+        <div className="flex justify-center mb-10">
             <div className="bg-brand-dark border border-white/10 p-1 rounded-full flex items-center relative">
                 <button 
                     onClick={() => setBilling('monthly')}
-                    className={`px-3 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 relative z-10 ${billing === 'monthly' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
+                    className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 relative z-10 ${billing === 'monthly' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
                 >
                     Monthly
                 </button>
                 <button 
                     onClick={() => setBilling('quarterly')}
-                    className={`px-3 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 relative z-10 ${billing === 'quarterly' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
+                    className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 relative z-10 ${billing === 'quarterly' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
                 >
                     Quarterly
                 </button>
                 <button 
                     onClick={() => setBilling('yearly')}
-                    className={`px-3 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 relative z-10 ${billing === 'yearly' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
+                    className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 relative z-10 ${billing === 'yearly' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
                 >
                     Yearly
                 </button>
@@ -169,32 +169,32 @@ const Plans: React.FC = () => {
       </div>
 
       {/* Pricing Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`relative flex flex-col p-5 md:p-6 border transition-all duration-300 group rounded-sm ${
+              className={`relative flex flex-col p-6 border transition-all duration-300 group rounded-sm ${
                 plan.isPopular 
-                  ? 'bg-brand-gray border-brand-red md:-translate-y-4 shadow-[0_0_30px_rgba(185,28,28,0.1)] z-20' 
+                  ? 'bg-brand-gray border-brand-red transform md:-translate-y-4 shadow-[0_0_30px_rgba(185,28,28,0.1)] z-20' 
                   : 'bg-brand-dark border-white/5 hover:border-white/20 hover:bg-brand-gray/50'
               }`}
             >
               {plan.isPopular && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-red text-white text-[8px] md:text-[10px] font-bold uppercase px-3 md:px-4 py-1 tracking-widest rounded-sm shadow-lg whitespace-nowrap">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-red text-white text-[10px] font-bold uppercase px-4 py-1 tracking-widest rounded-sm shadow-lg whitespace-nowrap">
                   Most Popular
                 </div>
               )}
 
-              <div className="mb-4 md:mb-6 text-center">
-                <h3 className={`font-display text-lg md:text-2xl font-bold uppercase mb-2 ${plan.isPopular ? 'text-brand-red' : 'text-white'}`}>
+              <div className="mb-6 text-center">
+                <h3 className={`font-display text-2xl font-bold uppercase mb-2 ${plan.isPopular ? 'text-brand-red' : 'text-white'}`}>
                     {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center">
-                  <span className="text-3xl md:text-4xl font-bold text-white">
+                  <span className="text-4xl font-bold text-white">
                     {billing === 'monthly' ? plan.prices.monthly : billing === 'quarterly' ? plan.prices.quarterly : plan.prices.yearly}
                   </span>
                   <span className="text-gray-400 ml-1 font-medium text-xs uppercase tracking-wider">
@@ -211,18 +211,18 @@ const Plans: React.FC = () => {
                         Married: {plan.marriedOption.monthly}/mo
                     </p>
                 )}
-                <p className="text-gray-400 mt-3 md:mt-4 text-xs min-h-[32px] leading-relaxed">{plan.description}</p>
+                <p className="text-gray-400 mt-4 text-xs min-h-[32px] leading-relaxed">{plan.description}</p>
               </div>
 
-              <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4 md:mb-6"></div>
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6"></div>
 
-              <ul className="flex-1 space-y-2 md:space-y-3 mb-6 md:mb-8">
+              <ul className="flex-1 space-y-3 mb-8">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     {feature.included ? (
-                      <Check className="h-3 w-3 md:h-4 md:w-4 text-brand-red mr-2 md:mr-3 shrink-0 mt-0.5" />
+                      <Check className="h-4 w-4 text-brand-red mr-3 shrink-0 mt-0.5" />
                     ) : (
-                      <X className="h-3 w-3 md:h-4 md:w-4 text-gray-700 mr-2 md:mr-3 shrink-0 mt-0.5" />
+                      <X className="h-4 w-4 text-gray-700 mr-3 shrink-0 mt-0.5" />
                     )}
                     <span className={`text-xs leading-snug ${feature.included ? 'text-gray-300' : 'text-gray-600 line-through decoration-gray-700'}`}>
                       {feature.text}
@@ -236,7 +236,7 @@ const Plans: React.FC = () => {
                     href="https://zfitness.gymmasteronline.com/portal/signup" 
                     target="_blank"
                     rel="noreferrer"
-                    className={`block w-full py-2 md:py-3 font-bold uppercase tracking-widest text-center text-xs transition-all duration-300 rounded-sm skew-x-[-6deg] min-h-[44px] flex items-center justify-center ${
+                    className={`block w-full py-3 font-bold uppercase tracking-widest text-center text-xs transition-all duration-300 rounded-sm skew-x-[-6deg] ${
                         plan.isPopular
                         ? 'bg-brand-red text-white hover:bg-red-700 shadow-lg hover:shadow-red-900/20'
                         : 'bg-white text-brand-black hover:bg-gray-200'

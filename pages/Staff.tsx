@@ -39,13 +39,13 @@ const Staff: React.FC = () => {
     <div className="bg-brand-black min-h-screen">
       
       {/* Hero Section */}
-      <div className="relative pt-16 md:pt-32 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden">
+      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden">
         <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl"></div>
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-3xl sm:text-5xl md:text-7xl font-bold uppercase text-white mb-4 md:mb-6"
+            className="font-display text-5xl md:text-7xl font-bold uppercase text-white mb-6"
           >
             Meet The <span className="text-brand-red">Team</span>
           </motion.h1>
@@ -53,7 +53,7 @@ const Staff: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light tracking-wide"
+            className="text-xl text-gray-300 max-w-2xl mx-auto font-light tracking-wide"
           >
             THE PEOPLE WHO MAKE IT HAPPEN
           </motion.p>
@@ -61,11 +61,11 @@ const Staff: React.FC = () => {
       </div>
 
       {/* Owners Section */}
-      <section className="py-12 md:py-16 bg-brand-dark relative border-y border-white/5">
+      <section className="py-16 bg-brand-dark relative border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Images Grid */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 gap-6">
                 {owners.map((owner, index) => (
                     <motion.div 
                         key={owner.name}
@@ -82,9 +82,9 @@ const Staff: React.FC = () => {
                                 className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
                             />
                         </div>
-                        <div className="mt-3 md:mt-4 text-center">
-                            <h3 className="font-display text-lg md:text-2xl font-bold uppercase text-white">{owner.name}</h3>
-                            <p className="text-brand-red text-xs md:text-sm font-bold uppercase tracking-widest">Owner</p>
+                        <div className="mt-4 text-center">
+                            <h3 className="font-display text-2xl font-bold uppercase text-white">{owner.name}</h3>
+                            <p className="text-brand-red text-sm font-bold uppercase tracking-widest">Owner</p>
                         </div>
                     </motion.div>
                 ))}
@@ -95,13 +95,13 @@ const Staff: React.FC = () => {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="space-y-4 md:space-y-6"
+                className="space-y-6"
             >
-                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-white mb-3 md:mb-4">
+                <h2 className="font-display text-4xl md:text-5xl font-bold uppercase text-white mb-4">
                     Our <span className="text-brand-red">Story</span>
                 </h2>
-                <div className="h-1 w-16 md:w-24 bg-brand-red mb-6 md:mb-8"></div>
-                <div className="text-gray-300 leading-relaxed space-y-4 md:space-y-6 font-light text-base md:text-lg">
+                <div className="h-1 w-24 bg-brand-red mb-8"></div>
+                <div className="text-gray-300 leading-relaxed space-y-6 font-light text-lg">
                     <p>
                         Zephyrs Barbell Gym was started in 1975 by Tom Galehouse. Located in Smithville, OH the gym was home to many men and women in Wayne County who sought to better themselves, not just physically but mentally and emotionally as well.
                     </p>
@@ -118,9 +118,9 @@ const Staff: React.FC = () => {
       </section>
 
       {/* Staff Grid */}
-      <section className="py-12 md:py-24 bg-brand-black">
+      <section className="py-24 bg-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 {staff.map((member, index) => (
                     <motion.div
                         key={member.name}
@@ -138,11 +138,11 @@ const Staff: React.FC = () => {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
-                        <div className="p-5 md:p-8 text-center relative z-20 bg-brand-gray">
-                            <h3 className="font-display text-lg md:text-2xl font-bold uppercase text-white mb-3 md:mb-4">{member.name}</h3>
+                        <div className="p-8 text-center relative z-20 bg-brand-gray">
+                            <h3 className="font-display text-2xl font-bold uppercase text-white mb-4">{member.name}</h3>
                             <div className="space-y-1">
                                 {member.role.map((r, i) => (
-                                    <p key={i} className="text-gray-400 text-xs md:text-sm uppercase tracking-wider font-medium">{r}</p>
+                                    <p key={i} className="text-gray-400 text-sm uppercase tracking-wider font-medium">{r}</p>
                                 ))}
                             </div>
                         </div>

@@ -112,7 +112,7 @@ const params = {
   return (
     <div className="bg-brand-black min-h-screen">
       {/* Hero Section */}
-      <div className="relative pt-16 md:pt-32 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden">
+      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
         <div className="absolute top-0 left-0 -mt-20 -ml-20 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl"></div>
 
@@ -146,25 +146,25 @@ const params = {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-brand-dark p-6 md:p-8 lg:p-12 border border-white/5 rounded-sm relative overflow-hidden"
+            className="bg-brand-dark p-8 md:p-12 border border-white/5 rounded-sm relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-[2px] bg-brand-red"></div>
 
-            <div className="flex items-start justify-between gap-4 mb-6 md:mb-8">
-              <h3 className="font-display text-2xl md:text-3xl font-bold uppercase text-white">
+            <div className="flex items-start justify-between gap-4 mb-8">
+              <h3 className="font-display text-3xl font-bold uppercase text-white">
                 Send a Message
               </h3>
 
               {/* subtle status chip (kept square-ish, no pills) */}
               <div
-                className={`text-[9px] md:text-[11px] uppercase tracking-widest font-bold px-2 md:px-3 py-1 md:py-2 border rounded-sm whitespace-nowrap ${
+                className={`text-[11px] uppercase tracking-widest font-bold px-3 py-2 border rounded-sm ${
                   loading
                     ? "text-gray-300 border-white/10 bg-brand-black/40"
                     : submitted
@@ -188,7 +188,7 @@ const params = {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-4 md:mb-6 p-3 md:p-4 bg-green-500/20 border border-green-500/50 rounded-sm text-green-400 font-bold uppercase text-xs md:text-sm"
+                className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-sm text-green-400 font-bold uppercase text-sm"
               >
                 ✓ Message sent successfully! We&apos;ll be in touch soon.
               </motion.div>
@@ -198,14 +198,14 @@ const params = {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-4 md:mb-6 p-3 md:p-4 bg-brand-red/20 border border-brand-red/50 rounded-sm text-brand-red font-bold uppercase text-xs md:text-sm"
+                className="mb-6 p-4 bg-brand-red/20 border border-brand-red/50 rounded-sm text-brand-red font-bold uppercase text-sm"
               >
                 ✗ {error}
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" noValidate>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label
                     htmlFor="name"
@@ -221,7 +221,7 @@ const params = {
                     required
                     autoComplete="name"
                     aria-invalid={!validation.nameOk}
-                    className={`w-full bg-brand-black border text-white px-3 md:px-4 py-2 md:py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 text-base min-h-[44px] ${
+                    className={`w-full bg-brand-black border text-white px-4 py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 ${
                       !validation.nameOk && formData.name.length > 0
                         ? "border-brand-red/60 focus:border-brand-red"
                         : "border-white/10 focus:border-brand-red"
@@ -259,7 +259,7 @@ const params = {
                     required
                     autoComplete="email"
                     aria-invalid={!validation.emailOk}
-                    className={`w-full bg-brand-black border text-white px-3 md:px-4 py-2 md:py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 text-base min-h-[44px] ${
+                    className={`w-full bg-brand-black border text-white px-4 py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 ${
                       !validation.emailOk && formData.email.length > 0
                         ? "border-brand-red/60 focus:border-brand-red"
                         : "border-white/10 focus:border-brand-red"
@@ -297,7 +297,7 @@ const params = {
                   onChange={handleChange}
                   required
                   aria-invalid={!validation.subjectOk}
-                  className={`w-full bg-brand-black border text-white px-3 md:px-4 py-2 md:py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 text-base min-h-[44px] ${
+                  className={`w-full bg-brand-black border text-white px-4 py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 ${
                     !validation.subjectOk && formData.subject.length > 0
                       ? "border-brand-red/60 focus:border-brand-red"
                       : "border-white/10 focus:border-brand-red"
@@ -332,9 +332,9 @@ const params = {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={4}
+                  rows={6}
                   aria-invalid={!validation.messageOk}
-                  className={`w-full bg-brand-black border text-white px-3 md:px-4 py-2 md:py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 resize-none text-base min-h-[120px] ${
+                  className={`w-full bg-brand-black border text-white px-4 py-3 focus:outline-none transition-colors rounded-sm placeholder-gray-700 resize-none ${
                     !validation.messageOk && formData.message.length > 0
                       ? "border-brand-red/60 focus:border-brand-red"
                       : "border-white/10 focus:border-brand-red"
@@ -360,9 +360,9 @@ const params = {
               <button
                 type="submit"
                 disabled={!canSubmit}
-                className="w-full bg-white text-brand-black font-bold uppercase tracking-[0.2em] py-3 md:py-4 hover:bg-brand-red hover:text-white transition-all duration-300 group skew-x-[-3deg] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-brand-black min-h-[48px] flex items-center justify-center"
+                className="w-full bg-white text-brand-black font-bold uppercase tracking-[0.2em] py-4 hover:bg-brand-red hover:text-white transition-all duration-300 group skew-x-[-3deg] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-brand-black"
               >
-                <span className="block skew-x-[3deg] flex items-center justify-center gap-2 text-base">
+                <span className="block skew-x-[3deg] flex items-center justify-center gap-2">
                   {loading ? "Sending..." : "Submit Inquiry"}
                   <Send
                     size={18}
@@ -372,7 +372,7 @@ const params = {
               </button>
 
               {/* Small note to help debugging / user trust */}
-              <div className="text-[10px] md:text-[11px] text-gray-600 uppercase tracking-widest">
+              <div className="text-[11px] text-gray-600 uppercase tracking-widest">
                 By submitting, your message is emailed to our staff. Replies go to your email.
               </div>
             </form>
