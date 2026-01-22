@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Dumbbell, HeartPulse, Zap, Trophy, ShowerHead, CupSoda, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Dumbbell, HeartPulse, Zap, Trophy, ShowerHead, CupSoda, Clock, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const images = [
   "https://images.squarespace-cdn.com/content/v1/637259c1a02be518e8a5e14c/76d2f848-6433-4b39-9724-d3a28b6d93b0/1A1A2233.jpg?format=1500w",
@@ -53,6 +53,32 @@ const features = [
 ];
 
 const Amenities: React.FC = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  const handlePrevious = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex - 1 + images.length) % images.length);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex + 1) % images.length);
+    }
+  };
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (selectedImageIndex === null) return;
+    if (e.key === 'ArrowLeft') handlePrevious();
+    if (e.key === 'ArrowRight') handleNext();
+    if (e.key === 'Escape') setSelectedImageIndex(null);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImageIndex]);
+
   return (
     <div className="bg-brand-black min-h-screen">
       
@@ -123,7 +149,8 @@ const Amenities: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="relative group overflow-hidden aspect-[4/3] bg-brand-gray"
+                className="relative group overflow-hidden aspect-[4/3] bg-brand-gray cursor-pointer"
+                onClick={() => setSelectedImageIndex(index)}
               >
                 <img 
                   src={src} 
@@ -132,9 +159,9 @@ const Amenities: React.FC = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-brand-red/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <span className="text-white font-display font-bold uppercase tracking-widest text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    View Space
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white font-display font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                    <span>Click to Enlarge</span>
                   </span>
                 </div>
               </motion.div>
@@ -142,6 +169,82 @@ const Amenities: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedImageIndex(null)}
+          >
+            {/* Main Image Container */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Image */}
+              <img
+                src={images[selectedImageIndex]}
+                alt={`Gallery image ${selectedImageIndex + 1}`}
+                className="max-w-full max-h-[85vh] object-contain"
+              />
+
+              {/* Close Button */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedImageIndex(null)}
+                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-3 backdrop-blur-sm"
+                aria-label="Close gallery"
+              >
+                <X className="w-6 h-6 text-white" />
+              </motion.button>
+
+              {/* Previous Button */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handlePrevious}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-brand-red hover:bg-brand-red/80 transition-colors rounded-full p-3 backdrop-blur-sm z-10"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-8 h-8 text-white" />
+              </motion.button>
+
+              {/* Next Button */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-brand-red hover:bg-brand-red/80 transition-colors rounded-full p-3 backdrop-blur-sm z-10"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-8 h-8 text-white" />
+              </motion.button>
+
+              {/* Image Counter */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                <p className="text-white font-semibold text-center">
+                  {selectedImageIndex + 1} / {images.length}
+                </p>
+              </div>
+
+              {/* Keyboard Hint */}
+              <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-white/50 text-sm text-center">
+                <p>← Arrow Keys → | ESC to close</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* CTA */}
       <section className="py-24 bg-brand-red text-white text-center relative overflow-hidden">
