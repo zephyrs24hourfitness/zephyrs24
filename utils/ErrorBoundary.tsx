@@ -3,7 +3,7 @@
  * Prevents app crashes from being exposed to users
  */
 
-import React, { ReactNode, ReactElement, Component, ErrorInfo } from 'react';
+import { ReactNode, ReactElement, Component, ErrorInfo } from 'react';
 
 interface Props {
   children: ReactNode;
