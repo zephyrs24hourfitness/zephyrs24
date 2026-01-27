@@ -327,52 +327,52 @@ const Plans: React.FC = () => {
                   Drop In Rates <span className="ml-4 h-px flex-1 bg-white/10 group-hover:bg-brand-red/30 transition-colors"></span>
                 </h3>
                 <ul className="space-y-6">
-                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors">
-                        <div>
+                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors gap-4">
+                        <div className="flex-1">
                             <span className="text-white font-bold text-lg block">Bronze Day Pass</span>
                             <span className="text-gray-500 text-xs uppercase tracking-wider">Gym Access Only</span>
                         </div>
-                        <span className="text-brand-red font-display font-bold text-2xl">$15.00</span>
+                        <span className="text-brand-red font-display font-bold text-2xl shrink-0">$15.00</span>
+                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                          <span className="block skew-x-[6deg]">Select</span>
+                        </a>
                     </li>
-                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors">
-                         <div>
+                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors gap-4">
+                        <div className="flex-1">
                             <span className="text-white font-bold text-lg block">Gold Day Pass</span>
                             <span className="text-gray-500 text-xs uppercase tracking-wider">Gym + CrossFit Class</span>
                         </div>
-                        <span className="text-brand-red font-display font-bold text-2xl">$25.00</span>
+                        <span className="text-brand-red font-display font-bold text-2xl shrink-0">$25.00</span>
+                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                          <span className="block skew-x-[6deg]">Select</span>
+                        </a>
                     </li>
                     <div className="w-full h-px bg-white/5 my-2"></div>
-                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors">
-                         <div>
+                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors gap-4">
+                        <div className="flex-1">
                             <span className="text-white font-bold text-lg block">Bronze Week Pass</span>
                             <span className="text-gray-500 text-xs uppercase tracking-wider">7 Days Gym Access</span>
                         </div>
-                        <span className="text-brand-red font-display font-bold text-2xl">$35.00</span>
+                        <span className="text-brand-red font-display font-bold text-2xl shrink-0">$35.00</span>
+                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                          <span className="block skew-x-[6deg]">Select</span>
+                        </a>
                     </li>
-                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors">
-                        <div>
+                    <li className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded transition-colors gap-4">
+                        <div className="flex-1">
                             <span className="text-white font-bold text-lg block">Gold Week Pass</span>
                             <span className="text-gray-500 text-xs uppercase tracking-wider">7 Days Gym + Classes</span>
                         </div>
-                        <span className="text-brand-red font-display font-bold text-2xl">$80.00</span>
+                        <span className="text-brand-red font-display font-bold text-2xl shrink-0">$80.00</span>
+                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                          <span className="block skew-x-[6deg]">Select</span>
+                        </a>
                     </li>
                 </ul>
-                <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0">
-                  <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="text-white font-bold uppercase tracking-widest text-sm hover:text-brand-red transition-colors flex items-center gap-2 bg-white/10 px-6 py-3 rounded-sm skew-x-[-6deg]">
-                    Purchase Pass <ArrowRight size={16} />
-                  </a>
-                  <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg]">
-                    <span className="block skew-x-[6deg]">Bronze Day Pass (Member)</span>
-                  </a>
-                  <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg]">
-                    <span className="block skew-x-[6deg]">Gold Day Pass (Member)</span>
-                  </a>
-                  <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg]">
-                    <span className="block skew-x-[6deg]">Bronze Week Pass (Member)</span>
-                  </a>
-                  <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg]">
-                    <span className="block skew-x-[6deg]">Gold Week Pass (Member)</span>
-                  </a>
+                <div className="mt-8 pt-6 border-t border-white/10">
+                   <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="text-white font-bold uppercase tracking-widest text-sm hover:text-brand-red transition-colors flex items-center gap-2">
+                      Purchase Pass <ArrowRight size={16} />
+                   </a>
                 </div>
             </motion.div>
 
