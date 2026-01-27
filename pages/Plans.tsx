@@ -333,7 +333,7 @@ const Plans: React.FC = () => {
                             <span className="text-gray-500 text-xs uppercase tracking-wider">Gym Access Only</span>
                         </div>
                         <span className="text-brand-red font-display font-bold text-2xl shrink-0">$15.00</span>
-                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                        <a href="https://zfitness.gymmasteronline.com/portal/signup/details/737a7b066b7d38824714bb6291f17a3d" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
                           <span className="block skew-x-[6deg]">Select</span>
                         </a>
                     </li>
@@ -343,7 +343,7 @@ const Plans: React.FC = () => {
                             <span className="text-gray-500 text-xs uppercase tracking-wider">Gym + CrossFit Class</span>
                         </div>
                         <span className="text-brand-red font-display font-bold text-2xl shrink-0">$25.00</span>
-                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                        <a href="https://zfitness.gymmasteronline.com/portal/signup/details/79dd6237fd9caf879ead9870909e16f4" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
                           <span className="block skew-x-[6deg]">Select</span>
                         </a>
                     </li>
@@ -354,7 +354,7 @@ const Plans: React.FC = () => {
                             <span className="text-gray-500 text-xs uppercase tracking-wider">7 Days Gym Access</span>
                         </div>
                         <span className="text-brand-red font-display font-bold text-2xl shrink-0">$35.00</span>
-                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                        <a href="https://zfitness.gymmasteronline.com/portal/signup/details/d5503f9058bc10aa54d18a53fd984d91" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
                           <span className="block skew-x-[6deg]">Select</span>
                         </a>
                     </li>
@@ -364,7 +364,7 @@ const Plans: React.FC = () => {
                             <span className="text-gray-500 text-xs uppercase tracking-wider">7 Days Gym + Classes</span>
                         </div>
                         <span className="text-brand-red font-display font-bold text-2xl shrink-0">$80.00</span>
-                        <a href="https://zfitness.gymmasteronline.com/portal/login" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
+                        <a href="https://zfitness.gymmasteronline.com/portal/signup/details/674f78b7830342ec1d97c4c22b5b3610" target="_blank" rel="noreferrer" className="inline-block bg-white text-brand-black px-4 py-2 font-bold uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm skew-x-[-6deg] shrink-0">
                           <span className="block skew-x-[6deg]">Select</span>
                         </a>
                     </li>
