@@ -23,6 +23,8 @@ interface PricingPlan {
     quarterly: string;
     yearly: string;
   };
+  urls: PlanPrice;
+  marriedUrls?: PlanPrice;
 }
 
 const plans: PricingPlan[] = [
@@ -33,6 +35,11 @@ const plans: PricingPlan[] = [
       monthly: '$45.80',
       quarterly: '$122.48',
       yearly: '$346.12'
+    },
+    urls: {
+      monthly: 'https://zfitness.gymmasteronline.com/portal/signup/details/fdd3f8e7b7b665f88fb3722d81785a37',
+      quarterly: 'https://zfitness.gymmasteronline.com/portal/signup/details/abf458fb4405c6713c878ff0800776a6',
+      yearly: 'https://zfitness.gymmasteronline.com/portal/signup/details/3184baa5a0ccf53a8b1021ea9fb66c71'
     },
     description: 'Standard 24/7 gym access for the independent fitness enthusiast.',
     features: [
@@ -52,10 +59,20 @@ const plans: PricingPlan[] = [
       quarterly: '$333.88',
       yearly: '$1,092.69'
     },
+    urls: {
+      monthly: 'https://zfitness.gymmasteronline.com/portal/signup/details/8426ca46d0fcd50a36def1bdd49ca1e2',
+      quarterly: 'https://zfitness.gymmasteronline.com/portal/signup/details/5846131a7778b85ed9ad8fd38bde2c05',
+      yearly: 'https://zfitness.gymmasteronline.com/portal/signup/details/ea79b0b203d2ba9764735c604c050e9a'
+    },
     marriedOption: {
         monthly: '$197.29',
         quarterly: '$500.82',
         yearly: '$1,639.04'
+    },
+    marriedUrls: {
+      monthly: 'https://zfitness.gymmasteronline.com/portal/signup/details/4de52c3f4d733f39fd9c17b0cf682354',
+      quarterly: 'https://zfitness.gymmasteronline.com/portal/signup/details/144d5b90aef43acca5fbcc3720d02853',
+      yearly: 'https://zfitness.gymmasteronline.com/portal/signup/details/c20babc70ada2dd154f3febee0082ac0'
     },
     description: 'The perfect balance of class training and open gym freedom.',
     features: [
@@ -75,10 +92,20 @@ const plans: PricingPlan[] = [
       quarterly: '$424.94',
       yearly: '$1,456.92'
     },
+    urls: {
+      monthly: 'https://zfitness.gymmasteronline.com/portal/signup/details/45a5568562ec9a69418a9061473f77c4',
+      quarterly: 'https://zfitness.gymmasteronline.com/portal/signup/details/c335d4bc7fe91f112d6f94f534406cc2',
+      yearly: 'https://zfitness.gymmasteronline.com/portal/signup/details/1d1f00fd74e7aeba336d860af22def73'
+    },
     marriedOption: {
         monthly: '$227.64',
         quarterly: '$637.40',
         yearly: '$2,185.38'
+    },
+    marriedUrls: {
+      monthly: 'https://zfitness.gymmasteronline.com/portal/signup/details/1316caff197b2a2116d4bfb676085c78',
+      quarterly: 'https://zfitness.gymmasteronline.com/portal/signup/details/a70a1067666a95c217f72c96649319ab',
+      yearly: 'https://zfitness.gymmasteronline.com/portal/signup/details/ae25f096a042dd85b82b851b4669d3ff'
     },
     description: 'The ultimate all-inclusive experience. No limits.',
     features: [
@@ -97,6 +124,11 @@ const plans: PricingPlan[] = [
       monthly: '$31.95',
       quarterly: '$79.88',
       yearly: '$255.60'
+    },
+    urls: {
+      monthly: 'https://zfitness.gymmasteronline.com/portal/signup/details/d18c8c50e1abd980c5fe2482b0627fab',
+      quarterly: 'https://zfitness.gymmasteronline.com/portal/signup/details/a790703560d0d9b8fc774a44a8adfc4f',
+      yearly: 'https://zfitness.gymmasteronline.com/portal/signup/details/552166d15eabfab67a31caa25d0d94a9'
     },
     description: 'Building healthy habits early. 24/7 access for ages 18 & under.',
     features: [
@@ -232,8 +264,36 @@ const Plans: React.FC = () => {
               </ul>
 
               <div className="mt-auto">
+                {plan.marriedOption ? (
+                  <div className="space-y-2">
+                    <a 
+                      href={plan.urls[billing]} 
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`block w-full py-2 font-bold uppercase tracking-widest text-center text-xs transition-all duration-300 rounded-sm skew-x-[-6deg] ${
+                          plan.isPopular
+                          ? 'bg-brand-red text-white hover:bg-red-700 shadow-lg hover:shadow-red-900/20'
+                          : 'bg-white text-brand-black hover:bg-gray-200'
+                      }`}
+                    >
+                      <span className="block skew-x-[6deg]">Select Single</span>
+                    </a>
+                    <a 
+                      href={plan.marriedUrls![billing]} 
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`block w-full py-2 font-bold uppercase tracking-widest text-center text-xs transition-all duration-300 rounded-sm skew-x-[-6deg] ${
+                          plan.isPopular
+                          ? 'bg-brand-red text-white hover:bg-red-700 shadow-lg hover:shadow-red-900/20'
+                          : 'bg-white text-brand-black hover:bg-gray-200'
+                      }`}
+                    >
+                      <span className="block skew-x-[6deg]">Select Married</span>
+                    </a>
+                  </div>
+                ) : (
                   <a 
-                    href="https://zfitness.gymmasteronline.com/portal/signup" 
+                    href={plan.urls[billing]} 
                     target="_blank"
                     rel="noreferrer"
                     className={`block w-full py-3 font-bold uppercase tracking-widest text-center text-xs transition-all duration-300 rounded-sm skew-x-[-6deg] ${
@@ -244,6 +304,7 @@ const Plans: React.FC = () => {
                   >
                     <span className="block skew-x-[6deg]">Select Plan</span>
                   </a>
+                )}
               </div>
             </motion.div>
           ))}
