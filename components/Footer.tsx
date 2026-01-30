@@ -69,7 +69,8 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Zephyrs Fitness. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Micah Richardson. All rights reserved.
+Built and maintained by Micah Richardson.</p>
           <div className="flex space-x-8 mt-4 md:mt-0">
             <a href="#" className="hover:text-brand-red transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-brand-red transition-colors">Terms of Use</a>
